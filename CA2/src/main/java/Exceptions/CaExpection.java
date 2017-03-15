@@ -9,6 +9,6 @@ package Exceptions;
  *
  * @author Janus
  */
-public class CaExpection {
+public class CaExpection extends Exception{
     
 }
