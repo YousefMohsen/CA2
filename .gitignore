@@ -9,3 +9,5 @@ nbdist/
 .nb-gradle/
 ### NetBeans ###
 
+/CA2/target/
+/CA2/nbproject/
