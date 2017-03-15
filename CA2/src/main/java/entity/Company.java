@@ -16,12 +16,22 @@ import javax.persistence.Id;
  * @author Janus
  */
 @Entity
-public class Company implements Serializable {
+public class Company extends InfoEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    private String name;
+    
+    private String description;
+    
+    private String cvr;
+    
+    private int numEmployees;
+    
+    private int marketValue;
 
     public Integer getId() {
         return id;

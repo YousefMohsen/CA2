@@ -6,22 +6,34 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Janus
  */
 @Entity
-public class Person implements Serializable {
+public class Person extends InfoEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    private String firstName;
+    
+    private String lastName;
+    
+    
+    @ManyToMany
+    private List<Hobby> hobbies;
 
     public Integer getId() {
         return id;
