@@ -5,6 +5,9 @@
  */
 package rest;
 
+import com.google.gson.Gson;
+import data.DBFacade;
+import entity.Person;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -22,6 +25,8 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("person")
 public class PersonResource {
+       Gson gson = new Gson();
+//DBFacade dbf = new DBFacade();
 
     @Context
     private UriInfo context;
@@ -47,10 +52,29 @@ public class PersonResource {
     @GET
     @Path("complete/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getPerson(@PathParam("id") int id) {//return all persons, with all details
+    public String getPerson(@PathParam("id") int id) {//returns a person with given id
         //TODO return proper representation object
         return "person with id"+id;
     }
+    
+    
+    @GET
+    @Path("contactinfo")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getAllContactInfo() {//returns contact info for all persons
+        //TODO return proper representation object
+        return "getAllContactInfo";
+    }
+    
+       @GET
+    @Path("contactinfo/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getPersonContactInfo(@PathParam("id") int id) {//returns only contact info for a given person
+        //TODO return proper representation object
+        return "getPersonContactInfo"+id;
+    } 
+    
+    
     /**
      * PUT method for updating or creating an instance of PersonResource
      * @param content representation for the resource
@@ -58,5 +82,10 @@ public class PersonResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content) {
+    Person newPerson = gson.fromJson(content, Person.class);
+    // dbf.updatePerson(newPerson);
+        System.out.println("update"+newPerson.toString());
     }
+    
+    
 }

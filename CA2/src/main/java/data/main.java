@@ -29,8 +29,8 @@ public class main {
         em.getTransaction().commit();
         em.close();
         
-        
-        DBFacade db = new DBFacade();
-        db.getPersons(2800);
+//        
+//        DBFacade db = new DBFacade();
+//        db.getPersons(2800);
     }
 }
