@@ -19,18 +19,22 @@ public class main {
     
     
     public static void main(String[] args) {
-        Persistence.generateSchema("pu", null);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu", null);
-        EntityManager em = emf.createEntityManager();
-        
-        em.getTransaction().begin();
-//        em.persist(new CityInfo(2800,"Lyngby"));
-        em.persist(new Address("Klampenborgvej18","Sej By",em.find(CityInfo.class, 1)));
-        em.getTransaction().commit();
-        em.close();
+//        Persistence.generateSchema("pu", null);
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu", null);
+//        EntityManager em = emf.createEntityManager();
+//        
+//        em.getTransaction().begin();
+////        em.persist(new CityInfo(2800,"Lyngby"));
+//        em.persist(new Address("Klampenborgvej18","Sej By",em.find(CityInfo.class, 1)));
+//        em.getTransaction().commit();
+//        em.close();
         
 //        
 //        DBFacade db = new DBFacade();
 //        db.getPersons(2800);
+
+DBFacadeNoDatabase dbf = new DBFacadeNoDatabase();
+
+        System.out.println(dbf.getPersons().size() );
     }
 }

@@ -7,7 +7,9 @@ package rest;
 
 import com.google.gson.Gson;
 import data.DBFacade;
+import data.DBFacadeNoDatabase;
 import entity.Person;
+import java.util.List;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -27,6 +29,7 @@ import javax.ws.rs.core.MediaType;
 public class PersonResource {
        Gson gson = new Gson();
 //DBFacade dbf = new DBFacade();
+  DBFacadeNoDatabase dbf = new DBFacadeNoDatabase();
 
     @Context
     private UriInfo context;
@@ -46,7 +49,13 @@ public class PersonResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getAll() {//return all persons, with all details
         //TODO return proper representation object
-        return "complete";
+        System.out.println("hejee");
+        
+          // List  p =  dbf.getPersons();
+       
+      
+        System.out.println(gson.toJson("p"));
+        return "hej";//
     }
 
     @GET
@@ -82,9 +91,9 @@ public class PersonResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content) {
-    Person newPerson = gson.fromJson(content, Person.class);
+    //Person newPerson = gson.fromJson(content, Person.class);
     // dbf.updatePerson(newPerson);
-        System.out.println("update"+newPerson.toString());
+   //     System.out.println("update"+newPerson.toString());
     }
     
     

@@ -18,10 +18,10 @@ import javax.persistence.Query;
  */
 public class DBFacadeNoDatabase {
 
-    List<Person> persons;
+    List<Person> persons = new ArrayList<Person>();
     
     public DBFacadeNoDatabase() {
-        persons = new ArrayList<Person>();
+       
         initData();
         
     }
@@ -29,7 +29,7 @@ public class DBFacadeNoDatabase {
     
     private void initData(){
     persons.add(new Person(1,"Leo","Messi",new Hobby(1,"god og football","Destrying big football teams")));
-    persons.add(new Person(2,"Xavi","Hernandez",new Hobby(1,"Giving assist","blablablabla giving assists to Leo Messi")));
+    persons.add(new Person(2,"Xavi","Hernandez",new Hobby(2,"Giving assist","blablablabla giving assists to Leo Messi")));
 
     }
     
