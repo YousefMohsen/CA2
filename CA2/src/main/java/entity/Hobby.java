@@ -35,12 +35,15 @@ public class Hobby implements Serializable {
     
     private String description;
 
-    public Hobby(Integer id, String name, String description) {
-        this.id = id;
+    public Hobby(String name, String description) {
+      
         this.name = name;
         this.description = description;
     }
-    
+//    
+
+    public Hobby() {
+    }
 
     public Integer getId() {
         return id;

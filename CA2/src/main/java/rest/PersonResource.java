@@ -7,7 +7,6 @@ package rest;
 
 import com.google.gson.Gson;
 import data.DBFacade;
-import data.DBFacadeNoDatabase;
 import entity.Person;
 import java.util.List;
 import javax.ws.rs.core.Context;
@@ -29,7 +28,7 @@ import javax.ws.rs.core.MediaType;
 public class PersonResource {
        Gson gson = new Gson();
 //DBFacade dbf = new DBFacade();
-  DBFacadeNoDatabase dbf = new DBFacadeNoDatabase();
+  
 
     @Context
     private UriInfo context;
@@ -63,7 +62,15 @@ public class PersonResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getPerson(@PathParam("id") int id) {//returns a person with given id
         //TODO return proper representation object
-        return "person with id"+id;
+    String r =  "{\"firstname\": \"Leo\","
+                + "\"lastName\": \"Messi\","
+                + "\"email\": \"kongen@live.dk\","
+                + "\"phone\": \"287106102\","
+                + "\"street\": \"Klampenborgvej 10\","
+                + "\"zipcode\": \"2800\","
+                + "\"city\": \"Lyngby\"}";
+   
+    return  gson.toJson(r);
     }
     
     

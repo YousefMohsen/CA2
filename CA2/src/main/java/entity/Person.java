@@ -31,17 +31,22 @@ public class Person extends InfoEntity implements Serializable {
     private String firstName;
     
     private String lastName;
+
     
     
     @ManyToMany
     private List<Hobby> hobbies;
 
-    public Person(Integer id, String firstName, String lastName, Hobby hobby) {
-        hobbies = new ArrayList<Hobby>();
-        this.id = id;
+    public Person(String firstName, String lastName, Hobby hobby,Address address,String email) {
+   super(email,address);
+
+        hobbies = new ArrayList<Hobby>();  
         this.firstName = firstName;
         this.lastName = lastName;
         this.hobbies.add(hobby);
+    }
+
+    public Person() {
     }
 
     
@@ -53,6 +58,10 @@ public class Person extends InfoEntity implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    
+    public void addHobby(Hobby h){
+    this.hobbies.add(h);
     }
 
     @Override

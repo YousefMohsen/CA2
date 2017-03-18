@@ -33,6 +33,11 @@ public class Company extends InfoEntity implements Serializable {
     
     private int marketValue;
 
+    public Company() {
+    }
+    
+    
+
     public Integer getId() {
         return id;
     }
