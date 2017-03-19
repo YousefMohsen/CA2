@@ -20,6 +20,17 @@ import javax.persistence.OneToMany;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class InfoEntity implements Serializable {
 
+    public InfoEntity() {
+    }
+
+    public InfoEntity(String email, Address address, List<Phone> phones) {
+        this.email = email;
+        this.address = address;
+        this.phones = phones;
+    }
+    
+    
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

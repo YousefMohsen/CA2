@@ -22,6 +22,24 @@ import javax.persistence.OneToMany;
 @Entity
 public class Person extends InfoEntity implements Serializable {
 
+    public Person() {
+    }
+
+//    public Person(String firstName, String lastName, List<Hobby> hobbies) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.hobbies = hobbies;
+//    }
+
+    public Person(String firstName, String lastName, List<Hobby> hobbies, String email, Address address, List<Phone> phones) {
+        super(email, address, phones);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hobbies = hobbies;
+    }
+    
+    
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -18,6 +18,18 @@ import javax.persistence.Id;
 @Entity
 public class Company extends InfoEntity implements Serializable {
 
+    public Company() {
+    }
+
+    public Company(String name, String description, String cvr, int numEmployees, int marketValue) {
+        this.name = name;
+        this.description = description;
+        this.cvr = cvr;
+        this.numEmployees = numEmployees;
+        this.marketValue = marketValue;
+    }
+    
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
