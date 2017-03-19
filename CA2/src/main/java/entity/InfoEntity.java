@@ -44,6 +44,11 @@ public class InfoEntity implements Serializable {
     @OneToMany(mappedBy = "infoEntity")
     private List<Phone> phones;
 
+    public InfoEntity(String email, Address address) {
+        this.email = email;
+        this.address = address;
+    }
+
     public Integer getId() {
         return id;
     }

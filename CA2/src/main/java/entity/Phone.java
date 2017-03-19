@@ -30,6 +30,9 @@ public class Phone implements Serializable {
     private int number;
     
     private String description;
+
+    public Phone() {
+    }
     
     public Integer getId() {
         return id;

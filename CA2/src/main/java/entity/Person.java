@@ -6,6 +6,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,17 +49,32 @@ public class Person extends InfoEntity implements Serializable {
     private String firstName;
     
     private String lastName;
+
     
     
     @ManyToMany
     private List<Hobby> hobbies;
 
+    public Person(String firstName, String lastName, Hobby hobby,Address address,String email) {
+   super(email,address);
+
+        hobbies = new ArrayList<Hobby>();  
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hobbies.add(hobby);
+    }
+    
+    
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    
+    public void addHobby(Hobby h){
+    this.hobbies.add(h);
     }
 
     @Override

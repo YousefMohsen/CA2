@@ -7,6 +7,8 @@ package data;
 
 import entity.Address;
 import entity.CityInfo;
+import entity.Hobby;
+import entity.Person;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -22,15 +24,21 @@ public class main {
         Persistence.generateSchema("pu", null);
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu", null);
         EntityManager em = emf.createEntityManager();
+       CityInfo cinfo =   new CityInfo(2800,"Lyngby");
+        Address address = new Address("Klampenborgvej18","Sej By",cinfo);
+        Hobby hobby = new Hobby("Goalmachine","Destrying other teams");
+        Person newPerson = new Person("Leo","Messi",  hobby,address,"leo@Messo.dk") ;
         
         em.getTransaction().begin();
-//        em.persist(new CityInfo(2800,"Lyngby"));
-        em.persist(new Address("Klampenborgvej18","Sej By",em.find(CityInfo.class, 1)));
+
         em.getTransaction().commit();
         em.close();
         
         
         DBFacade db = new DBFacade();
-        db.getPersons(2800);
+       
+
+
+        //System.out.println(dbf.getPersons().size() );
     }
 }

@@ -43,7 +43,6 @@ public class Hobby implements Serializable {
     private String name;
     
     private String description;
-    
 
     public Integer getId() {
         return id;
