@@ -48,10 +48,9 @@ Allbtn.addEventListener("click",allBtnPressed);
 //////////
 
           var getPersonID  = function(pId){
-             //  var url = "https://138.68.93.230.xip.io/CA2/api/person/complete/"+pId;
               
 
-                 var url = "http://localhost:8084/CA2/api/person/complete/"+pId;
+                 var url = "https://138.68.93.230.xip.io/CA2/api/person/complete/"+pId;
    var conf = {method: 'get'};
    var promise = fetch(url,conf);
    
@@ -73,7 +72,7 @@ Allbtn.addEventListener("click",allBtnPressed);
 var getPersonEmail  = function(mail){
              //  var url = "https://138.68.93.230.xip.io/CA2/api/person/complete/"+pId;
              
-   var url = "http://localhost:8084/CA2/api/person/email/"+mail;
+   var url = "https://138.68.93.230.xip.io/CA2/api/person/email/"+mail;
    var conf = {method: 'get'};
    var promise = fetch(url,conf);
    
@@ -94,8 +93,8 @@ var getPersonEmail  = function(mail){
               
           }
     var getAll = function(){
-                    //https://138.68.93.230.xip.io/CA2/api/person/complete/ 
-   var url = "http://localhost:8084/CA2/api/person/complete";
+               
+   var url = "https://138.68.93.230.xip.io/CA2/api/person/complete";
    var conf = {method: 'get'};
    var promise = fetch(url,conf);
    
