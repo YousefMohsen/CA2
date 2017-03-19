@@ -1,80 +1,148 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>CA1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="newcss.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-      .centerText{
-          
-          text-align: center;
-     
-      }
-      .topBackground{
-          padding: 10px;
-          height: 100px;
-               color: white; 
-          background-color: red;
-             
-      }
-      .txtinput{
-
-         margin-top:  5px;
-          margin-bottom:  5px;
-          
-      }
-      
-      .btn{
-          margin-bottom: 100px;
-          
-          
-      }
-      
-      .infoBox{
-          background-color:antiquewhite;
-          padding: 5px;
-          height: 300px;
-          width: 300px;
-          display: inline-block;
-          
-      }
-      
-      .boxContainer{
-          
-          border: 1px solid black;
-          
-      }
-      
-  </style>
-    
     </head>
     <body>
-        
-        
-<div class="container">
-    <div class="topBackground">
-    <h1 class="centerText">Velkommen til Crack!</h1>
-  </div>
-
-
-
-      <input type="text" class="form-control txtinput" id="input" placeholder="skriv et telefonnummer, mail, navn, zip">
-
       
- 
-    <button type="submit" id="btn" class="btn btn-default buttonnn">Søg</button>
+                <div class="linkA">
+             <a  href="home.html">Prøv systemet</a>
+            
+        </div>
+            
+                  <div class="bline"></div>
+            <div class="newSection back1 txtCol2 ">
+                <div class="bline"></div>
+                <h1> CA 2 - ORM REST AJAX </h1>
+                <p>by </p>
+             <h2> Yousef Mohsen & Janus Udsen </h2>
+             <h3> Afleveres søndag 19/03/2017 </h3>
+  
+            
+            
+            <br>
+            
+            <h4>Link til GitHub:</h4>
+            <a href="https://github.com/YousefMohsen/CA2" class="buttonCol">
+                
+                <img src="downloads/lincIcon.svg" alt="download" class="imageE" />
+                 </a>
+               <br>
+       
+            
+                   <div class="linkA">
+             <a  href="home.html">Prøv systemet</a>
+            
+        </div>
+        
+      
+            
+        </div>
+            
+                      
+            
+            
+                <div class="newSection back2 ">
+                      <div class="wline"></div>
+                     <h1 class="txtCol1"> Brugvejledning </h1>
+        
+                     <p class="txtCol1">
+                         
+                         
 
-    <div class="boxContainer">
-        <div id="output"></div>
-    
-    </div>
-    
+ </p>
+
+<p class="txtCol1"> 
+Herunder ses startsiden til systemet. Man kan søge efter personer gennem deres emails.(Du kan teste med følgende mails: "em2@" eller "em3@"). 
+Vi har desuden tilføjet en testknap, hvor man kan få vist samtlige bruger i databasen ved at trykke på knappen "Se alle".          </p>
+         
+<img class="scrnShot" src="downloads/scrshot.png" alt=""/>
+                </div>
+            
+                 <div id="restApi" class="newSection back1 txtCol2">
+                       <div class="bline"></div>
+           
+                
+                       <h1 > Rest api </h1>
+                       <p class="blackTx">
+                       Nedenstående er vores rest api
+                       </p>
+                       
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/api/person/complete</td>
+        <td>returns all persons in database</td>
+
+      </tr>
+      <tr>
+        <td>/api/person/complete/{id}</td>
+        <td>Moe</td>
+     
+      </tr>
+      <tr>
+        <td>/api/person/email/{mail}</td>
+        <td>Returns a person with the given email</td>
+      </tr>
+      
+           <tr>
+        <td>/api/person/contactinfo</td>
+        <td>returns contactinfo of all persons in database</td>
+      </tr>
+          <tr>
+        <td>/api/person/contactinfo/{id}</td>
+        <td>returns contactinfo of a specific person</td>
+      </tr>
+    </tbody>
+  </table>
+                       
 </div>
-        
-        
-        <script src="scripts/newjavascript.js" type="text/javascript"></script>
-        
+                     
+        </div>
+            <div class="newSection back2 ">
+                  <div class="wline"></div>
+                     <h1 class="whiteTx"> Test </h1>
+                     <p>
+                         I vores test af Jpa har vi lavet nogle tests som tester det basale af vores hente fra databasen funktioner så vi er sikker på at det virker
+                     </p>
+   
+            </div>
+          
+               <div class="newSection back1 txtCol2 ">
+                       
+                  <div class="bline"></div>
+                
+            <h1> Arbejdsfordeling </h1>
+            
+            <h4 >Rest API - Yousef Mohsen</h4>
+            <h4 >Side til aflevering - Yousef Mohsen</h4>
+            <h4>JPA - Janus Udsen </h4>
+             <h4>Test JPA-facaden - Janus Udsen </h4>
+                <h4>Frontend siden - Yousef Mohsen </h4>
+                
+
+        </div>
+                
+       <div class="bline"></div>
+            </div>
+    
     </body>
 </html>

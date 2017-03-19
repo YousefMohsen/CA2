@@ -83,3 +83,29 @@ h1,h2,h3,h4,p,a{
     
        text-align: left;
 }
+
+
+
+
+
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+
+.scrnShot{
+    
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}

@@ -54,12 +54,12 @@ DBFacade dbf = new DBFacade();
         
          //List  p =  dbf.getPersons();
        
-      String jasonSttestr = "[{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]},{\"firstName\":\"fn4\",\"lastName\":\"ln4\",\"email\":\"em4\",\"address\":{\"street\":\"vej4\",\"additionalInfo\":\"ad4\",\"cityInfo\":{\"zipCode\":800,\"city\":\"Høje Taastrup\"}},\"phones\":[]}]";
+      //String jasonSttestr = "[{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]},{\"firstName\":\"fn4\",\"lastName\":\"ln4\",\"email\":\"em4\",\"address\":{\"street\":\"vej4\",\"additionalInfo\":\"ad4\",\"cityInfo\":{\"zipCode\":800,\"city\":\"Høje Taastrup\"}},\"phones\":[]}]";
        
-     // String jasonStr =gson.toJson(dbf.getPersons());
-      System.out.println(jasonSttestr);
+      String jasonStr =gson.toJson(dbf.getPersons());
+      System.out.println(jasonStr);
 
-        return jasonSttestr;//gson.toJson(dbf.getPersons());//
+        return jasonStr;//gson.toJson(dbf.getPersons());//
     }
 
     @GET
@@ -69,7 +69,7 @@ DBFacade dbf = new DBFacade();
         //TODO return proper representation object
         
        
-    String r = gson.toJson( dbf.getPerson(1));// "{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]}";
+    String r = gson.toJson(dbf.getPerson(id));// "{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]}";
 
    
     return r;//  gson.toJson(r);

@@ -28,11 +28,11 @@ public class main {
 //        Persistence.generateSchema("pu1", null);
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu1", null);
 //        EntityManager em = emf.createEntityManager();
-  //new DataFiller();
+ //new DataFiller();
 
 //
 DBFacade dbf = new DBFacade();
-        System.out.println(gson.toJson(dbf.getPersonPhone(33)));
+  System.out.println(gson.toJson(dbf.getPersonEmail("em3@")));
   
     }
 }

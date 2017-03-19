@@ -8,10 +8,16 @@
 var input = document.getElementById("input");
 
 var btn = document.getElementById("btn");
+var Allbtn = document.getElementById("Allbtn");
 
 var btnPressed = function(){
    
     findType(input.value);
+};
+
+var allBtnPressed = function(){
+    getAll();
+    
 };
 
 var isInteger = function(n){
@@ -28,13 +34,16 @@ var findType = function(str){
         alert("this is a phone number!");   
     }else if(str.length===4 && isInteger(str)){
         alert("this is a zip code!");   
+    }else if(str.length<4 && isInteger(str)){
+        alert("this is an id!"); 
+        getPersonID(str);
+        
     }
     
     
 };
 btn.addEventListener("click",btnPressed);
-
-
+Allbtn.addEventListener("click",allBtnPressed);
 
 //////////
 
@@ -58,7 +67,7 @@ btn.addEventListener("click",btnPressed);
     
    });
          
-          }
+          };
           
           
 var getPersonEmail  = function(mail){
@@ -172,5 +181,5 @@ function listToTable(alist) {
     outputDiv.innerHTML =result;
   };
    
-getPersonEmail("em3");
+
      

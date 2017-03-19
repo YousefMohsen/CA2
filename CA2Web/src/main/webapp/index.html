@@ -10,11 +10,14 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link href="newcss.css" rel="stylesheet" type="text/css"/>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-           
+          
         <div class="body">
+             <a class="bline" href="d">Gå til aflevringssiden</a>
                   <div class="bline"></div>
             <div class="newSection back1 txtCol2 ">
                 <div class="bline"></div>
@@ -48,23 +51,63 @@ and open the template in the editor.
                      <h1 class="txtCol1"> Brugvejledning </h1>
         
                      <p class="txtCol1">
+                         
+                         
 
  </p>
-    <p> 
 
 <p class="txtCol1"> 
-blablablabal                  </p>
-        
+Herunder ses startsiden til systemet. Man kan søge efter personer gennem deres emails.(Du kan teste med følgende mails: "em2@" eller "em3@"). 
+Vi har desuden tilføjet en testknap, hvor man kan få vist samtlige bruger i databasen ved at trykke på knappen "Se alle".          </p>
+         
+<img class="scrnShot" src="downloads/scrshot.png" alt=""/>
                 </div>
             
-                 <div class="newSection back1 txtCol2">
+                 <div id="restApi" class="newSection back1 txtCol2">
                        <div class="bline"></div>
            
                 
-                       <h1 > System design </h1>
+                       <h1 > Rest api </h1>
                        <p class="blackTx">
-                       blablabalbalbalab
+                       Nedenstående er vores rest api
                        </p>
+                       
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/api/person/complete</td>
+        <td>returns all persons in database</td>
+
+      </tr>
+      <tr>
+        <td>/api/person/complete/{id}</td>
+        <td>Moe</td>
+     
+      </tr>
+      <tr>
+        <td>/api/person/email/{mail}</td>
+        <td>Returns a person with the given email</td>
+      </tr>
+      
+           <tr>
+        <td>/api/person/contactinfo</td>
+        <td>returns contactinfo of all persons in database</td>
+      </tr>
+          <tr>
+        <td>/api/person/contactinfo/{id}</td>
+        <td>returns contactinfo of a specific person</td>
+      </tr>
+    </tbody>
+  </table>
+                       
+</div>
                      
         </div>
             <div class="newSection back2 ">
