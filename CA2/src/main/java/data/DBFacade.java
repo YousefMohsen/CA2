@@ -67,5 +67,11 @@ public class DBFacade {
     private EntityManager getManager() {
         return emf.createEntityManager();
     }
+    
+    public CityInfo getCity(int zip){
+        Query q = em.createQuery("SELECT a FROM CityInfo a WHERE a.zipCode = :zipCode");
+        q.setParameter("zipCode", zip);
+        return (CityInfo) q.getSingleResult();
+    }
 
 }

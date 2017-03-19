@@ -33,6 +33,12 @@ public class Phone implements Serializable {
 
     public Phone() {
     }
+
+    public Phone(int number, String description) {
+        this.number = number;
+        this.description = description;
+    }
+    
     
     public Integer getId() {
         return id;

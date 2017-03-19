@@ -21,24 +21,10 @@ public class main {
     
     
     public static void main(String[] args) {
-        Persistence.generateSchema("pu", null);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu", null);
+        Persistence.generateSchema("pu1", null);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu1", null);
         EntityManager em = emf.createEntityManager();
-       CityInfo cinfo =   new CityInfo(2800,"Lyngby");
-        Address address = new Address("Klampenborgvej18","Sej By",cinfo);
-        Hobby hobby = new Hobby("Goalmachine","Destrying other teams");
-        Person newPerson = new Person("Leo","Messi",  hobby,address,"leo@Messo.dk") ;
+        new DataFiller();
         
-        em.getTransaction().begin();
-
-        em.getTransaction().commit();
-        em.close();
-        
-        
-        DBFacade db = new DBFacade();
-       
-
-
-        //System.out.println(dbf.getPersons().size() );
     }
 }
