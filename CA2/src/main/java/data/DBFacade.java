@@ -97,5 +97,10 @@ public class DBFacade {
         q.setParameter("phone", phone);
         return (Person) q.getSingleResult();
     }
-
+    
+    public Person getPersonName(String name){
+        Query q = em.createQuery("SELECT p FROM Person p WHERE p.firstName = :name");
+        q.setParameter("name", name);
+        return (Person) q.getSingleResult();
+    }
 }

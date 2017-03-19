@@ -5,6 +5,12 @@
  */
 package data;
 
+import entity.Address;
+import entity.Hobby;
+import entity.Person;
+import entity.Phone;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -31,7 +37,9 @@ public class DBFacadeTest {
      */
     @org.junit.Test
     public void testSave() {
-        //dbf.
+        DBFacade dbf = new DBFacade("put");
+        dbf.save(new Person("tester","efternavn",new Hobby("hb2","dsc2"),"em2",new Address("vej2","ad2",dbf.getCity(3045)),new ArrayList<Phone>(Arrays.asList(new Phone(22,"desc2")))));
+        assertEquals("tester",dbf.getPersonName("tester").getFirstName());
     }
 
     /**
@@ -39,6 +47,8 @@ public class DBFacadeTest {
      */
     @org.junit.Test
     public void testGetPerson() {
+        DBFacade dbf = new DBFacade("put");
+        assertEquals("fn1",dbf.getPerson(1).getFirstName());
     }
 
     /**
@@ -46,6 +56,8 @@ public class DBFacadeTest {
      */
     @org.junit.Test
     public void testGetPersons_0args() {
+        DBFacade dbf = new DBFacade("put");
+        assertEquals(10,dbf.getPersons().size());
     }
 
     /**
@@ -53,13 +65,7 @@ public class DBFacadeTest {
      */
     @org.junit.Test
     public void testGetPersons_int() {
+        DBFacade dbf = new DBFacade("put");
+        assertEquals("fn3",dbf.getPersons(800).get(0).getFirstName());
     }
-
-    /**
-     * Test of getCompany method, of class DBFacade.
-     */
-    @org.junit.Test
-    public void testGetCompany() {
-    }
-    
 }
