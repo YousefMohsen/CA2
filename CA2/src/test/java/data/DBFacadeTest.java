@@ -20,7 +20,7 @@ public class DBFacadeTest {
     
     @Before
     public void setUp() {
-        DBFacade dbf = new DBFacade("put");
+       // DBFacade dbf = new DBFacade("put");
         
     }
 

@@ -5,6 +5,7 @@
  */
 package entity;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,45 +28,35 @@ public class Person extends InfoEntity implements Serializable {
     public Person() {
     }
 
-//    public Person(String firstName, String lastName, List<Hobby> hobbies) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.hobbies = hobbies;
-//    }
+
 
     public Person(String firstName, String lastName, Hobby hobby, String email, Address address, List<Phone> phones) {
         super(email, address, phones);
-        hobbies = new ArrayList<Hobby>();
+     // if(hobbies==null){ hobbies = new ArrayList<Hobby>();}
         
         this.firstName = firstName;
         this.lastName = lastName;
-        this.hobbies.add(hobby);
+      //  this.hobbies.add(hobby);
+//        hobby.addPerson(this);
     }
     
     
 
     private static final long serialVersionUID = 1L;
-    @Id
+  @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+ private Integer id;
+    //[{"firstName":"fn3","lastName":"ln3","email":"em3","address":{"street":"vej3","additionalInfo":"ad3","cityInfo":{"zipCode":555,"city":"Scanning"}},"phones":[]}]
+   @Expose private  String firstName;
     
-    private String firstName;
-    
-    private String lastName;
+    @Expose private String lastName;
 
     
     
     @ManyToMany(cascade = CascadeType.PERSIST)
-    private List<Hobby> hobbies;
 
-    public Person(String firstName, String lastName, Hobby hobby,Address address,String email) {
-   super(email,address);
+    private  List<Hobby> hobbies;
 
-        hobbies = new ArrayList<Hobby>();  
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.hobbies.add(hobby);
-    }
     
     
     public Integer getId() {
@@ -79,6 +70,27 @@ public class Person extends InfoEntity implements Serializable {
     public void addHobby(Hobby h){
     this.hobbies.add(h);
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<Hobby> getHobbies() {
+        return hobbies;
+    }
+    
 
     @Override
     public int hashCode() {
@@ -102,7 +114,7 @@ public class Person extends InfoEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Person[ id=" + id + " ]";
+        return "entity.Person[ id=" + id + firstName+lastName+" ]";
     }
     
 }

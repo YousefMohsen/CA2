@@ -8,6 +8,7 @@ package rest;
 import com.google.gson.Gson;
 import data.DBFacade;
 import entity.Person;
+import static java.lang.System.console;
 import java.util.List;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -27,7 +28,7 @@ import javax.ws.rs.core.MediaType;
 @Path("person")
 public class PersonResource {
        Gson gson = new Gson();
-//DBFacade dbf = new DBFacade();
+DBFacade dbf = new DBFacade();
   
 
     @Context
@@ -48,13 +49,16 @@ public class PersonResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getAll() {//return all persons, with all details
         //TODO return proper representation object
-        System.out.println("hejee");
-        
-          // List  p =  dbf.getPersons();
        
-      
-        System.out.println(gson.toJson("p"));
-        return "hej";//
+        
+         //List  p =  dbf.getPersons();
+       
+      String jasonSttestr = "[{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]},{\"firstName\":\"fn4\",\"lastName\":\"ln4\",\"email\":\"em4\",\"address\":{\"street\":\"vej4\",\"additionalInfo\":\"ad4\",\"cityInfo\":{\"zipCode\":800,\"city\":\"Høje Taastrup\"}},\"phones\":[]}]";
+       
+     // String jasonStr =gson.toJson(dbf.getPersons());
+      System.out.println(jasonSttestr);
+
+        return jasonSttestr;//gson.toJson(dbf.getPersons());//
     }
 
     @GET
@@ -62,15 +66,10 @@ public class PersonResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getPerson(@PathParam("id") int id) {//returns a person with given id
         //TODO return proper representation object
-    String r =  "{\"firstname\": \"Leo\","
-                + "\"lastName\": \"Messi\","
-                + "\"email\": \"kongen@live.dk\","
-                + "\"phone\": \"287106102\","
-                + "\"street\": \"Klampenborgvej 10\","
-                + "\"zipcode\": \"2800\","
-                + "\"city\": \"Lyngby\"}";
+    String r = "{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]}";
+
    
-    return  gson.toJson(r);
+    return r;//  gson.toJson(r);
     }
     
     

@@ -5,6 +5,7 @@
  */
 package entity;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
@@ -39,15 +40,15 @@ public class Company extends InfoEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    private String name;
+   @Expose  private String name;
     
-    private String description;
+   @Expose  private String description;
     
-    private String cvr;
+  @Expose   private String cvr;
     
-    private int numEmployees;
+   @Expose  private int numEmployees;
     
-    private int marketValue;
+   @Expose  private int marketValue;
 
 
     public Integer getId() {
