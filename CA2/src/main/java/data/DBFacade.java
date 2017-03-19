@@ -20,12 +20,19 @@ import javax.persistence.Query;
  */
 public class DBFacade {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu1", null);
+    EntityManagerFactory emf;
     EntityManager em = getManager();
 
     public DBFacade() {
+        emf = Persistence.createEntityManagerFactory("pu1", null);
         Persistence.generateSchema("pu1", null);
     }
+
+    public DBFacade(String pu) {
+        this.emf = Persistence.createEntityManagerFactory(pu, null);
+        Persistence.generateSchema(pu, null);
+    }
+    
 
     public void save(Object o){
         try {
@@ -35,6 +42,7 @@ public class DBFacade {
         } finally {
             em.close();
         }
+        em = getManager();
     }
 
     public Person getPerson(int id){
