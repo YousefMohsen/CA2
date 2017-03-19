@@ -16,11 +16,13 @@ import static org.junit.Assert.*;
 public class DBFacadeTest {
     
     public DBFacadeTest() {
+        DBFacade dbf = new DBFacade("put");
     }
     
     @Before
     public void setUp() {
-        DBFacade dbf = new DBFacade("put");
+        
+        new DataFiller();
         
     }
 
@@ -29,6 +31,7 @@ public class DBFacadeTest {
      */
     @org.junit.Test
     public void testSave() {
+        //dbf.
     }
 
     /**

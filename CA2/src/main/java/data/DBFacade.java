@@ -81,5 +81,17 @@ public class DBFacade {
         q.setParameter("zipCode", zip);
         return (CityInfo) q.getSingleResult();
     }
+    
+    public Person getPersonEmail(String email){
+        Query q = em.createQuery("SELECT e FROM InfoEntity e WHERE e.email = :email");
+        q.setParameter("email", email);
+        return (Person) q.getSingleResult();
+    }
+    
+    public Person getPersonPhone(int phone){
+        Query q = em.createQuery("SELECT p FROM InfoEntity p WHERE p.phones = :phone");
+        q.setParameter("phone", phone);
+        return (Person) q.getSingleResult();
+    }
 
 }
