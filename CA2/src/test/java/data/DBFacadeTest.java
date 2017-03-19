@@ -16,12 +16,12 @@ import static org.junit.Assert.*;
 public class DBFacadeTest {
     
     public DBFacadeTest() {
-        DBFacade dbf = new DBFacade("put");
+       // DBFacade dbf = new DBFacade("put");
     }
     
     @Before
     public void setUp() {
-        new DataFiller();
+       // new DataFiller();
        // DBFacade dbf = new DBFacade("put");
         
     }

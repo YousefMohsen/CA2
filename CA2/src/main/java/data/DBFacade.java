@@ -92,7 +92,8 @@ public class DBFacade {
     }
     
     public Person getPersonPhone(int phone){
-        Query q = em.createQuery("SELECT p FROM InfoEntity p WHERE p.phones = :phone");
+        
+        Query q = em.createQuery("SELECT p FROM InfoEntity p WHERE :phone MEMBER OF p.phones");
         q.setParameter("phone", phone);
         return (Person) q.getSingleResult();
     }

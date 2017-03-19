@@ -32,7 +32,7 @@ public class main {
 
 //
 DBFacade dbf = new DBFacade();
-        System.out.println(gson.toJson(dbf.getPerson(1)));
+        System.out.println(gson.toJson(dbf.getPersonPhone(33)));
   
     }
 }

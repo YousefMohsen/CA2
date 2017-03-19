@@ -6,6 +6,7 @@
 package rest;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import data.DBFacade;
 import entity.Person;
 import static java.lang.System.console;
@@ -27,7 +28,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("person")
 public class PersonResource {
-       Gson gson = new Gson();
+Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 DBFacade dbf = new DBFacade();
   
 
@@ -66,7 +67,9 @@ DBFacade dbf = new DBFacade();
     @Produces(MediaType.APPLICATION_JSON)
     public String getPerson(@PathParam("id") int id) {//returns a person with given id
         //TODO return proper representation object
-    String r = "{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]}";
+        
+       
+    String r = gson.toJson( dbf.getPerson(1));// "{\"firstName\":\"fn3\",\"lastName\":\"ln3\",\"email\":\"em3\",\"address\":{\"street\":\"vej3\",\"additionalInfo\":\"ad3\",\"cityInfo\":{\"zipCode\":555,\"city\":\"Scanning\"}},\"phones\":[]}";
 
    
     return r;//  gson.toJson(r);
@@ -89,7 +92,26 @@ DBFacade dbf = new DBFacade();
         return "getPersonContactInfo"+id;
     } 
     
+    @GET
+    @Path("email/{mail}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getPersonEmail(@PathParam("mail") String mail) {//returns person from a given mail
+        //TODO return proper representation object
+     
+        
+        return  gson.toJson(dbf.getPersonEmail(mail));
+    }    
     
+    
+       @GET
+    @Path("phone/{pn}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getPersonPhone(@PathParam("mail") String pn) {//returns person from a given mail
+        //TODO return proper representation object
+     
+        
+        return "";// gson.toJson(dbf(mail));
+    } 
     /**
      * PUT method for updating or creating an instance of PersonResource
      * @param content representation for the resource

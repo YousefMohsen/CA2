@@ -23,6 +23,7 @@ var findType = function(str){
     
     if(str.includes("@")){
         alert("this is an email!");
+        getPersonEmail(str);
     }else if(str.length===8 && isInteger(str)){
         alert("this is a phone number!");   
     }else if(str.length===4 && isInteger(str)){
@@ -38,7 +39,32 @@ btn.addEventListener("click",btnPressed);
 //////////
 
           var getPersonID  = function(pId){
+             //  var url = "https://138.68.93.230.xip.io/CA2/api/person/complete/"+pId;
+              
+
                  var url = "http://localhost:8084/CA2/api/person/complete/"+pId;
+   var conf = {method: 'get'};
+   var promise = fetch(url,conf);
+   
+   promise.then(function(respone){
+       
+       return respone.json();
+       
+   }).then(function(text){
+
+   console.log( text);
+ 
+    generateInfoBoxes(text);
+    
+   });
+         
+          }
+          
+          
+var getPersonEmail  = function(mail){
+             //  var url = "https://138.68.93.230.xip.io/CA2/api/person/complete/"+pId;
+             
+   var url = "http://localhost:8084/CA2/api/person/email/"+mail;
    var conf = {method: 'get'};
    var promise = fetch(url,conf);
    
@@ -59,7 +85,7 @@ btn.addEventListener("click",btnPressed);
               
           }
     var getAll = function(){
-           
+                    //https://138.68.93.230.xip.io/CA2/api/person/complete/ 
    var url = "http://localhost:8084/CA2/api/person/complete";
    var conf = {method: 'get'};
    var promise = fetch(url,conf);
@@ -146,5 +172,5 @@ function listToTable(alist) {
     outputDiv.innerHTML =result;
   };
    
-getPersonID(2);
+getPersonEmail("em3");
      

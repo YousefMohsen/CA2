@@ -36,7 +36,7 @@ public class InfoEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+     @Expose private Integer id;
     
     @Expose private String email;
     
