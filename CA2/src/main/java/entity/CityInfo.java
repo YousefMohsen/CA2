@@ -5,6 +5,7 @@
  */
 package entity;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,9 +24,9 @@ public class CityInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    private int zipCode;
+  @Expose   private int zipCode;
     
-    private String city;
+   @Expose  private String city;
 
     public CityInfo() {
     }

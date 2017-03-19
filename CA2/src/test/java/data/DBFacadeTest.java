@@ -21,8 +21,8 @@ public class DBFacadeTest {
     
     @Before
     public void setUp() {
-        
         new DataFiller();
+       // DBFacade dbf = new DBFacade("put");
         
     }
 

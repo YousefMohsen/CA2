@@ -21,11 +21,14 @@ import javax.persistence.Query;
 public class DBFacade {
 
     EntityManagerFactory emf;
-    EntityManager em = getManager();
+    EntityManager em ;
 
     public DBFacade() {
+             Persistence.generateSchema("pu1", null);
         emf = Persistence.createEntityManagerFactory("pu1", null);
-        Persistence.generateSchema("pu1", null);
+        em = emf.createEntityManager();
+   
+   
     }
 
     public DBFacade(String pu) {

@@ -2,6 +2,7 @@ data/main.class
 entity/Hobby.class
 entity/InfoEntity_.class
 entity/CityInfo.class
+data/DataFiller.class
 data/DBFacade.class
 entity/Person.class
 Exceptions/CaExpection.class

@@ -1,6 +1,7 @@
 
 package entity;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -37,13 +38,13 @@ public class InfoEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    private String email;
+    @Expose private String email;
     
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private Address address;
+    @Expose private Address address;
     
     @OneToMany(mappedBy = "infoEntity",cascade = CascadeType.PERSIST)
-    private List<Phone> phones;
+   @Expose  private List<Phone> phones;
 
     public InfoEntity(String email, Address address) {
         this.email = email;

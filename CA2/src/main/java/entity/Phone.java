@@ -5,6 +5,7 @@
  */
 package entity;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,9 +28,9 @@ public class Phone implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private int number;
+    @Expose private int number;
     
-    private String description;
+   @Expose  private String description;
 
     public Phone() {
     }

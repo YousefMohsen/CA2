@@ -6,6 +6,7 @@
  */
 package entity;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -39,13 +40,13 @@ public class Hobby implements Serializable {
     
 
     @ManyToMany(mappedBy = "hobbies", cascade = CascadeType.PERSIST)
-    private List<Person> persons;
+    private transient List<Person> persons;
 
     
     
-    private String name;
+  @Expose   private String name;
     
-    private String description;
+ @Expose    private String description;
 
     public Integer getId() {
         return id;
